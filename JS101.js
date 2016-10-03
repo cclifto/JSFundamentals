@@ -191,6 +191,11 @@ var doubleGlobalNumber = function() {
 	NUMBER = NUMBER * 2
 }
 
+var doTwice = function(function1){
+	function1()
+	function1()
+}
+
 doTwice(incrementGlobalNumber)
 console.assert(NUMBER === 12)
 

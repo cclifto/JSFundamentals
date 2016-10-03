@@ -152,20 +152,16 @@ console.assert(minimum(1000,-2,99,50) === -2)
 // return true if either input is a string, but not 
 // both or neither. 
 
-var isAString = function (num1, num2){
-    if (typeof num1 === 'string'){
-        return true
+var justOneString = function(num1, num2){
+    if (typeof num1 === 'string' && typeof num2 === 'string') {
+        return false
     }
 
-    else if (typeof num2 === 'string'){
+    else if (typeof num1 === 'string' || typeof num2 === 'string') {
     	return true
     }
 
-    else if ((typeof num1 !== 'string') || (typeof num2 !== 'string')){
-    	return false
-    }
-
-    else if ((typeof num1 !== 'string') && (typeof num2 !== 'string')){
+    else if (typeof num1 !== 'string' && typeof num2 !== 'string') {
     	return false
     }
 }

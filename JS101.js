@@ -211,6 +211,12 @@ console.assert(NUMBER === 48)
 
 var ORACLE = 'NO'
 
+var conditionallyInvoke = function(function1){
+	if (ORACLE === 'YES'){
+		function1()
+	}
+}
+
 conditionallyInvoke(doubleGlobalNumber)
 console.assert(NUMBER === 48)
 
@@ -221,6 +227,13 @@ console.assert(NUMBER === 96)
 // Part 10
 
 // Make the following assertion work:
+	var factory1 = function(){
+		return 'hello world'
+	}
+
+	var factory1 = function(){
+		return factory1()
+	}
 
 console.assert(factory()() === 'hello world')  // INCEPTION!
 

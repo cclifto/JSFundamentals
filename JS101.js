@@ -227,13 +227,13 @@ console.assert(NUMBER === 96)
 // Part 10
 
 // Make the following assertion work:
-	var factory1 = function(){
+	var factory = function(){
+		var factory1 = function(){
 		return 'hello world'
+		}
+		return factory1
 	}
 
-	var factory1 = function(){
-		return factory1()
-	}
 
 console.assert(factory()() === 'hello world')  // INCEPTION!
 

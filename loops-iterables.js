@@ -135,8 +135,19 @@ console.assert(fizzbuzz(10) === "..fizz.buzzfizz..fizzbuzz")
  * i.e. findLongestWord("a book full of dogs") should return "book"
  */
 
-function findLongestWord(sentence){
+var findLongestWord = function(sentence){
     // YOUR CODE HERE
+    sentence = sentence.replace(/'/i, "")
+    var str = sentence.split(" ");
+    var longest = 0;
+    var word = 0;    
+    for (var i = 0; i < str.length; i++) {
+        if (longest < str[i].length) {
+            longest = str[i].length
+            word = str[i];
+        }  
+    }
+    return word;
 }
 
 console.assert(findLongestWord("a book full of dogs") === "book")
